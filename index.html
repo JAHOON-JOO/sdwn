@@ -126,6 +126,12 @@ Email: <a href="mailto:official@sdwn.co.kr">official@sdwn.co.kr</a>
 </div>
 <!-- /#page -->
 <div id="photoswipe"></div>
+<!-- Messenger 채팅 플러그인 Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your 채팅 플러그인 code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
 <!-- Scripts -->
 <script src="js/plugins/jquery1.11.2.min.js"></script>
@@ -141,6 +147,26 @@ Email: <a href="mailto:official@sdwn.co.kr">official@sdwn.co.kr</a>
 
 <!-- Custom Script -->
 <script src="js/custom.js"></script>
+    
+<script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "2464469623568578");
+      chatbox.setAttribute("attribution", "biz_inbox");
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v11.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/ko_KR/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 
 </body>
